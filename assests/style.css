@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300&family=Signika&display=swap');
+*{
+	margin: 0;
+	box-sizing:border-box;
+}
+body{
+	font-family: 'Public Sans', sans-serif;
+	background-color: #fff;
+}
+#grid_container{
+	display: grid;
+	grid-template-areas:'nav main main';
+	grid-gap:40px;
+}
+nav{
+	background-color: #b9bbc1;
+	grid-area: nav;
+	display: flex;
+	flex-direction:column;
+	height:100%;
+	width:305px;
+	position: fixed;
+	overflow-y:auto; 
+	text-align:left;
+
+}
+nav header{
+	padding: 10px 14px;
+	margin-top: 20px;
+	padding-bottom: 20px;
+	font-size: 30px;
+	border-bottom: 1px solid #DDD;
+}
+nav a{
+	text-decoration: none;
+	display: inline-block;
+	color: #000;
+	font-size: 16px;
+	padding: 20px 30px;
+	border-bottom: 1px solid #DDD;
+}
+nav a:hover{
+	cursor: pointer;
+	background-color: #DDD;
+}
+#main-doc{
+	grid-area: main;
+	margin-left: 305px;
+
+}
+#main-doc .main-section{margin-right:3%;}
+#main-doc section header{
+	font-size: 2em;
+	padding-top:2%;
+	padding-bottom: 2%;
+}
+#main-doc section:not('code') {
+	line-height: 1.5;
+	text-align: justify;
+	color: #333;
+}
+#main-doc section p{
+	font-size: 15px!important;
+    margin-top: 26px;
+    margin-bottom: 30px;
+}
+#main-doc section ul li{
+	font-size: 15px;
+	margin-top:15px;
+	margin-bottom: 15px;
+}
+ul{
+	margin-left: 20px;
+}
+#main-doc section code{
+    border-radius: 6px;
+    display: block;
+    margin-bottom: 2%;
+    color: #5c657d;
+    padding: 15px;
+    width: 100%;
+    background-color: #f7f7f7;
+}
+@media (max-width: 800px){
+	#grid_container{
+		grid-template-areas:
+		'nav nav nav'
+		'main main main';
+		grid-gap:40px;
+}
+	nav{
+	    width: 100%;
+	    max-height: 330px;
+	    border: none;
+	    z-index: 1;
+	    border-bottom: 2px solid;
+}
+
+	#main-doc{
+	margin-left: 20px;
+	margin-top: 340px;
+
+}
+}
